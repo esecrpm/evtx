@@ -1,0 +1,83 @@
+Author: esecrpm
+Description: Process tracking
+EventId: 1
+Channel: Microsoft-Windows-Sysmon/Operational
+Maps:
+  - 
+    Property: Username
+    PropertyValue: "%user%"
+    Values: 
+      - 
+        Name: user
+        Value: "/Event/EventData/Data[@Name=\"User\"]"
+  - 
+    Property: ExecutableInfo
+    PropertyValue: "%CommandLine%"
+    Values: 
+      - 
+        Name: CommandLine
+        Value: "/Event/EventData/Data[@Name=\"CommandLine\"]"
+  - 
+    Property: PayloadData1
+    PropertyValue: "%Description%"
+    Values: 
+      - 
+        Name: Description
+        Value: "/Event/EventData/Data[@Name=\"Description\"]"
+  - 
+    Property: PayloadData2
+    PropertyValue: "%Hashes%"
+    Values: 
+      - 
+        Name: Hashes
+        Value: "/Event/EventData/Data[@Name=\"Hashes\"]"
+  - 
+    Property: PayloadData3
+    PropertyValue: "ParentCommandLine: %ParentCommandLine%"
+    Values: 
+      - 
+        Name: ParentCommandLine
+        Value: "/Event/EventData/Data[@Name=\"ParentCommandLine\"]"
+
+#<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+#  <System>
+#    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}" /> 
+#    <EventID>1</EventID> 
+#    <Version>5</Version> 
+#    <Level>4</Level> 
+#    <Task>1</Task> 
+#    <Opcode>0</Opcode> 
+#    <Keywords>0x8000000000000000</Keywords> 
+#    <TimeCreated SystemTime="2020-11-09T21:51:06.1124489Z" /> 
+#    <EventRecordID>1075936</EventRecordID> 
+#    <Correlation /> 
+#    <Execution ProcessID="6016" ThreadID="7004" /> 
+#    <Channel>Microsoft-Windows-Sysmon/Operational</Channel> 
+#    <Computer>pooh</Computer> 
+#    <Security UserID="S-1-5-18" /> 
+#  </System>
+#  <EventData>
+#    <Data Name="RuleName">-</Data> 
+#    <Data Name="UtcTime">2020-11-09T21:43:36.650</Data> 
+#    <Data Name="ProcessGuid">{026a6ed9-57f0-5fa9-d52c-000000001600}</Data> 
+#    <Data Name="ProcessId">6808</Data> 
+#    <Data Name="Image">C:\Windows\servicing\TrustedInstaller.exe</Data> 
+#    <Data Name="FileVersion">10.0.17763.1098 (WinBuild.160101.0800)</Data> 
+#    <Data Name="Description">Windows Modules Installer</Data> 
+#    <Data Name="Product">Microsoft(R) Windows(R) Operating System</Data>
+#    <Data Name="Company">Microsoft Corporation</Data>
+#    <Data Name="OriginalFileName">TrustedInstaller.exe</Data>
+#    <Data Name="CommandLine">C:\Windows\servicing\TrustedInstaller.exe</Data>
+#    <Data Name="CurrentDirectory">C:\WINDOWS\system32\</Data>
+#    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+#    <Data Name="LogonGuid">{026a6ed9-e89c-5fa7-e703-000000000000}</Data>
+#    <Data Name="LogonID">0x3e7</Data>
+#    <Data Name="TerminalSessionID">0</Data>
+#    <Data Name="IntegrityLevel">System</Data>
+#    <Data Name="Hashes">SHA1=104463A5D7CBAFA8676276E8CAA500908422B10E</Data>
+#    <Data Name="ParentProcessGuid">{026a6ed9-e892-5fa7-0600-000000001600}</Data>
+#    <Data Name="ParentProcessId">772</Data>
+#    <Data Name="ParentImage">C:\Windows\System32\services.exe</Data>
+#    <Data Name="ParentCommandLine">C:\WINDOWS\system32\services.exe</Data>
+#  </EventData>
+#</Event>
