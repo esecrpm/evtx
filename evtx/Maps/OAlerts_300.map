@@ -18,7 +18,7 @@ Maps:
       - 
         Name: PayloadData2
         Value: "/Event/EventData/Data"
-        Refine: "(?<=, )[^,\\d]+(?=,)"       
+        Refine: "(?<=, )[^,*]+(?=,)"       
 # Valid properties include:
 # UserName
 # RemoteHost
